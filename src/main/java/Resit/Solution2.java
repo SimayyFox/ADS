@@ -18,7 +18,6 @@ public class Solution2 {
         queue.add(v);
         colored.add(v);
 
-        int count = 1;
         int loopCount = 0;
         while (loopCount++ < n) {
             Queue<Vertex> temp = new LinkedList<>();
@@ -27,14 +26,13 @@ public class Solution2 {
                     if (!colored.contains(w)) {
                         temp.add(w);
                         colored.add(w);
-                        count++;
                     }
                 }
             }
             queue = temp;
         }
 
-        return count;
+        return colored.size();
     }
 }
 
